@@ -51,53 +51,6 @@ def draw_triangles():
         turtle.penup()
         turtle.right(30)
 
-def smallCircle1(a,b,c,z,fillColor):
-    original_pos=t.pos()
-    original_heading=t.heading()
-    t.color("black")
-    t.speed(0)
-    
-    for i in range(b):
-        center_x = a*math.cos(math.radians(z))
-        center_y = a*math.sin(math.radians(z))
-        z+=30
-        t.penup()
-        t.goto(center_x, center_y)
-        t.pendown()
-        t.fillcolor(fillColor)
-        t.begin_fill()
-        t.circle(c)
-        t.end_fill()
-    
-    t.penup()
-    t.goto(original_pos)
-    t.setheading(original_heading)
-    t.pendown()
-
-
-def smallCircle2(a,b,c,z,fillColor):
-    original_pos=t.pos()
-    original_heading=t.heading()
-    t.color("black")
-    t.speed(0)
-    
-    for i in range(b):
-        center_x = a*math.cos(math.radians(z))
-        center_y = a*math.sin(math.radians(z))
-        z+=30
-        t.penup()
-        t.goto(center_x, center_y)
-        t.pendown()
-        t.fillcolor(fillColor)
-        t.begin_fill()
-        t.circle(c)
-        t.end_fill()
-    
-    t.penup()
-    t.goto(original_pos)
-    t.setheading(original_heading)
-    t.pendown()
-
 def FillCircle(color, radius):
     t.speed(0)
     t.penup()
@@ -114,10 +67,10 @@ def FillCircle(color, radius):
     t.forward(radius-15)
     t.setheading(0)
 
-def SmallSquare(a,b,c,z,fillColor):
+def SmallSquare(a,b,c,z,fillColor, color):
     original_pos=t.pos()
     original_heading=t.heading()
-    t.color("black")
+    t.color(color)
     t.speed(0)
     
     for i in range(b):
@@ -193,11 +146,12 @@ turtle.speed(0)
 draw_pookkalam()
 FillCircle("red", 180)
 FillCircle("white", 150)
-SmallSquare(165, 12, 15,15, "orange")
-SmallSquare(165, 12, 15,0, "white")
-FillCircle("pink", 120)
+SmallSquare(165, 12, 15,15, "orange", "orange")
+SmallSquare(165, 12, 15,0, "white", "white")
+FillCircle("green", 120)
 draw_triangles()
 draw_colored_circle()
 draw_filled_wavy_circle(radius, wave_amplitude, wave_frequency, thickness, fill_color)
+FillCircle("white", 5)
 
 screen.exitonclick()
